@@ -1,0 +1,42 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gulaev.dao.MeetingRepository">
+
+  <select id="getById" resultMap="MeetingResultMap">
+    SELECT * FROM meetings WHERE meeting_id = #{meetingId}
+  </select>
+
+  <update id="update" parameterType="com.gulaev.model.Meeting">
+    UPDATE meetings
+    SET lawyers_id = #{lawyer.lawyerId}, client_id = #{client.clientId}, office_room_id =
+    #{officeRoom.roomId}
+    WHERE meeting_id = #{meetingId}
+  </update>
+
+  <select id="getAll" resultMap="MeetingResultMap">
+    SELECT * FROM meetings;
+  </select>
+
+  <delete id="deleteById" parameterType="int">
+    DELETE FROM meetings WHERE meeting_id = #{id}
+  </delete>
+
+  <resultMap id="MeetingResultMap" type="com.gulaev.model.Meeting" autoMapping="false">
+    <id property="meetingId" column="meeting_id"/>
+    <association property="lawyer" column="lawyers_id"
+      javaType="com.gulaev.model.Lawyer"
+      select="com.gulaev.dao.LawyersRepository.getById"
+      fetchType="eager"/>
+    <association property="client" column="client_id"
+      javaType="com.gulaev.model.Client"
+      select="com.gulaev.dao.ClientRepository.getById"
+      fetchType="eager"/>
+    <association property="officeRoom" column="office_room_id"
+      javaType="com.gulaev.model.OfficeRoom"
+      select="com.gulaev.dao.OfficeRoomRepository.getById"
+      fetchType="eager"/>
+
+  </resultMap>
+</mapper>

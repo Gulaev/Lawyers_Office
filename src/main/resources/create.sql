@@ -76,26 +76,26 @@ CREATE TABLE meetings (
 );
 
 
-CREATE TABLE contract (
+CREATE TABLE contracts (
     contract_id INT AUTO_INCREMENT PRIMARY KEY,
     start_date DATE,
-    payments_id INT,
+    payment_id INT,
     case_type_id INT,
     client_id INT,
     lawyer_id INT,
-    FOREIGN KEY (payments_id) REFERENCES payments(payment_id),
+    FOREIGN KEY (payment_id) REFERENCES payments(payment_id),
     FOREIGN KEY (case_type_id) REFERENCES case_types(case_type_id),
     FOREIGN KEY (client_id) REFERENCES clients(client_id),
     FOREIGN KEY (lawyer_id) REFERENCES lawyers(lawyer_id)
 );
 
 
-CREATE TABLE lawyer_client_contracts (
-    client_id INT,
-    lawyer_id INT,
-    contract_id INT,
-    PRIMARY KEY (client_id, lawyer_id, contract_id),
-    FOREIGN KEY (client_id) REFERENCES clients(client_id),
-    FOREIGN KEY (lawyer_id) REFERENCES lawyers(lawyer_id),
-    FOREIGN KEY (contract_id) REFERENCES contract(contract_id)
-);
+--CREATE TABLE lawyer_client_contracts (
+--    client_id INT,
+--    lawyer_id INT,
+--    contract_id INT,
+--    PRIMARY KEY (client_id, lawyer_id, contract_id),
+--    FOREIGN KEY (client_id) REFERENCES clients(client_id),
+--    FOREIGN KEY (lawyer_id) REFERENCES lawyers(lawyer_id),
+--    FOREIGN KEY (contract_id) REFERENCES contract(contract_id)
+--);

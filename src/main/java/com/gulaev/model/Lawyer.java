@@ -13,4 +13,15 @@ public class Lawyer {
   private Passport passport;
   private List<Contract> contracts;
 
+
+  @Override
+  public String toString() {
+    return "Lawyer{" +
+        "lawyerId=" + lawyerId +
+        ", firstName='" + firstName + '\'' +
+        ", lastName='" + lastName + '\'' +
+        ", officeRoomNumber=" + officeRoomNumber +
+        ", passport=" + passport +
+        '}';
+  }
 }

@@ -11,6 +11,4 @@ public class Payment {
   private Client client;
   private Lawyer lawyer;
   private Integer lawyerAmount;
-
-
 }

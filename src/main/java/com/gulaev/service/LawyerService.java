@@ -1,17 +1,17 @@
 package com.gulaev.service;
 
-import com.gulaev.dao.imp.LawyerRepository;
+import com.gulaev.dao.imp.LawyerRepositoryImp;
 import com.gulaev.model.Lawyer;
 
 public class LawyerService {
 
-  private LawyerRepository lawyerRepository;
+  private LawyerRepositoryImp lawyerRepositoryImp;
 
   public LawyerService() {
-    this.lawyerRepository = new LawyerRepository();
+    this.lawyerRepositoryImp = new LawyerRepositoryImp();
   }
 
   public Lawyer getById(Integer id) {
-    return lawyerRepository.getById(id);
+    return lawyerRepositoryImp.getById(id).get();
   }
 }

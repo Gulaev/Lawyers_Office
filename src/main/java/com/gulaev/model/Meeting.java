@@ -9,5 +9,4 @@ public class Meeting {
   private Lawyer lawyer;
   private Client client;
   private OfficeRoom officeRoom;
-
 }

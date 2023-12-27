@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gulaev.dao.LawyersRepository">
+
+
+  <select id="getById" resultMap="LawyersResultMap">
+    SELECT * FROM lawyers WHERE lawyer_id = #{lawyerId}
+  </select>
+
+  <update id="update" parameterType="com.gulaev.model.Lawyer">
+    UPDATE lawyers
+    SET first_name = #{firstName}, last_name = #{lastName}, office_room_number = #{officeRoomNumber}
+    WHERE lawyer_id = #{lawyerId}
+  </update>
+
+  <select id="getAll" resultMap="LawyersResultMap">
+    SELECT * FROM lawyers;
+  </select>
+
+  <delete id="deleteById" parameterType="int">
+    DELETE FROM lawyers WHERE lawyer_id = #{id}
+  </delete>
+
+  <resultMap id="LawyersResultMap" type="com.gulaev.model.Lawyer" autoMapping="false">
+    <id property="lawyerId" column="lawyer_id"/>
+    <result property="firstName" column="first_name"/>
+    <result property="lastName" column="last_name"/>
+    <result property="officeRoomNumber" column="office_room_number"/>
+    <association property="passport"
+      column="passport_id" javaType="com.gulaev.model.Passport"
+      select="com.gulaev.dao.PassportRepository.getById"
+      fetchType="eager"/>
+    <collection property="contracts" column="client_id"
+      select="com.gulaev.dao.ContractRepository.getByClientId"
+      fetchType="lazy"/>
+  </resultMap>
+</mapper>

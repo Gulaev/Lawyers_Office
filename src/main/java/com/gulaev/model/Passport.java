@@ -6,9 +6,8 @@ import lombok.Data;
 @Data
 public class Passport {
 
-  private Integer passortId;
+  private Integer passportId;
   private String tin;
   private Date dateOfIssue;
   private String issuedBy;
-
 }

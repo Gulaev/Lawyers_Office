@@ -1,19 +1,19 @@
 package com.gulaev.service;
 
-import com.gulaev.dao.Repository;
-import com.gulaev.dao.imp.PassportRepository;
+import com.gulaev.dao.PassportRepository;
+import com.gulaev.dao.imp.PassportRepositoryImp;
 import com.gulaev.model.Passport;
 
 public class PassportService {
 
-  Repository<Integer, Passport> passportRepository;
+  PassportRepository passportRepository;
 
   public PassportService() {
-    this.passportRepository = new PassportRepository();
+    this.passportRepository = new PassportRepositoryImp();
   }
 
   public Passport getById(Integer id) {
-    return passportRepository.getById(id);
+    return passportRepository.getById(id).get();
   }
 
 

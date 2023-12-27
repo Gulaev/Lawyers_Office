@@ -8,7 +8,7 @@ public class CaseType {
   private Integer caseTypeId;
   private String caseTypeName;
   private Category category;
-  private String LegalRequirements;
-  private String FeesStructure;
+  private String legalRequirements;
+  private String feesStructure;
   private Integer averageCaseCost;
 }

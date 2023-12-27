@@ -1,0 +1,39 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gulaev.dao.CaseTypeRepository">
+
+  <select id="getById" resultMap="CaseTypeResultMap">
+    SELECT * FROM case_types WHERE case_type_id = #{caseTypeId}
+  </select>
+
+  <select id="getAll" resultMap="CaseTypeResultMap">
+    SELECT * FROM case_types
+  </select>
+
+  <insert id="create" parameterType="com.gulaev.model.CaseType" keyColumn="case_type_id"
+    keyProperty="caseTypeId" useGeneratedKeys="true">
+    INSERT INTO case_types (case_type_name, legal_requirements, fees_structure, average_case_cost)
+    VALUES (#{caseTypeName}, #{legalRequirements}, #{feesStructure}, #{averageCaseCost})
+  </insert>
+
+  <update id="update" parameterType="com.gulaev.model.CaseType">
+    UPDATE case_types
+    SET case_type_name = #{caseTypeName}, legal_requirements = #{legalRequirements}, fees_structure
+    = #{feesStructure}, average_case_cost = #{averageCaseCost}
+    WHERE case_type_id = #{caseTypeId}
+  </update>
+
+  <delete id="delete" parameterType="int">
+    DELETE FROM case_types WHERE case_type_id = #{caseTypeId}
+  </delete>
+
+  <resultMap id="CaseTypeResultMap" type="com.gulaev.model.CaseType" autoMapping="false">
+    <id property="caseTypeId" column="case_type_id"/>
+    <result property="caseTypeName" column="case_type_name"/>
+    <result property="legalRequirements" column="legal_requirements"/>
+    <result property="feesStructure" column="fees_structure"/>
+    <result property="averageCaseCost" column="average_case_cost"/>
+  </resultMap>
+</mapper>

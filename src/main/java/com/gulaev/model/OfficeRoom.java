@@ -9,5 +9,4 @@ public class OfficeRoom {
   private Integer officeRoomNumber;
   private Integer floorNumber;
   private LawyersOffice lawyersOffice;
-
 }

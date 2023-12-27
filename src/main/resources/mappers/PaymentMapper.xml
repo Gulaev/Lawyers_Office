@@ -1,0 +1,45 @@
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gulaev.dao.PaymentRepository">
+
+  <select id="getById" resultMap="PaymentResultMap">
+    SELECT * FROM payments WHERE payment_id = #{paymentId}
+  </select>
+
+  <insert id="create" parameterType="com.gulaev.model.Payment" keyColumn="payment_id"
+    keyProperty="paymentId" useGeneratedKeys="true">
+    INSERT INTO payments (date_of_payment, lawyer_amount, client_id, lawyer_id)
+    VALUES (#{dateOfPayment}, #{lawyerAmount}, #{client.clientId}, #{lawyer.lawyerId})
+  </insert>
+
+  <select id="getAll" resultMap="PaymentResultMap">
+    SELECT * FROM payments
+  </select>
+
+  <update id="update" parameterType="com.gulaev.model.Payment">
+    UPDATE payments
+    SET date_of_payment = #{dateOfPayment}, lawyer_amount = #{lawyerAmount}, client_id =
+    #{client.clientId}, lawyer_id = #{lawyer.lawyerId}
+    WHERE payment_id = #{paymentId}
+  </update>
+
+  <delete id="deleteById" parameterType="int">
+    DELETE FROM payments WHERE payment_id = #{paymentId}
+  </delete>
+
+  <resultMap id="PaymentResultMap" type="com.gulaev.model.Payment" autoMapping="false">
+    <id column="payment_id" property="paymentId"/>
+    <result column="date_of_payment" property="dateOfPayment"/>
+    <result column="lawyer_amount" property="lawyerAmount"/>
+    <association property="client"
+      column="client_id" javaType="com.gulaev.model.Client"
+      select="com.gulaev.dao.ClientRepository.getById"
+      fetchType="eager"/>
+    <association property="lawyer"
+      column="lawyer_id" javaType="com.gulaev.model.Lawyer"
+      select="com.gulaev.dao.LawyersRepository.getById"
+      fetchType="eager"/>
+  </resultMap>
+</mapper>
