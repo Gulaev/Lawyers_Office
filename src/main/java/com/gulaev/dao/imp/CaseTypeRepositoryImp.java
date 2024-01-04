@@ -13,7 +13,7 @@ public class CaseTypeRepositoryImp implements CaseTypeRepository {
   @Override
   public void create(CaseType caseType) {
     try (SqlSession sqlSession = DbUtils.getSessionFactory().openSession(true)) {
-        sqlSession.getMapper(CaseTypeRepository.class).create(caseType);
+      sqlSession.getMapper(CaseTypeRepository.class).create(caseType);
     }
 
   }
