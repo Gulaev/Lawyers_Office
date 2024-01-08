@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="xsd/client.xsd">
+  <client>
+    <clientId>1</clientId>
+    <firstName>Jane</firstName>
+    <lastName>Doe</lastName>
+    <passportId>1</passportId>
+  </client>
+  <client>
+    <clientId>1</clientId>
+    <firstName>Jone</firstName>
+    <lastName>Hall</lastName>
+    <passportId>2</passportId>
+  </client>
+</clients>

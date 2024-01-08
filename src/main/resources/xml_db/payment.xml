@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<payments xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="xsd/payment.xsd">
+  <payment>
+    <paymentId>1</paymentId>
+    <dateOfPayment>2022-01-01</dateOfPayment>
+    <clientId>1</clientId>
+    <lawyerId>1</lawyerId>
+    <lawyerAmount>1000</lawyerAmount>
+  </payment>
+  <payment>
+    <paymentId>2</paymentId>
+    <dateOfPayment>2022-01-02</dateOfPayment>
+    <clientId>1</clientId>
+    <lawyerId>1</lawyerId>
+    <lawyerAmount>2000</lawyerAmount>
+  </payment>
+  <payment>
+    <paymentId>3</paymentId>
+    <dateOfPayment>2022-01-03</dateOfPayment>
+    <clientId>1</clientId>
+    <lawyerId>1</lawyerId>
+    <lawyerAmount>3000</lawyerAmount>
+  </payment>
+</payments>
