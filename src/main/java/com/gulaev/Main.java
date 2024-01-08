@@ -1,6 +1,6 @@
 package com.gulaev;
 
-import com.gulaev.xml_pharser.XmlParser;
+import com.gulaev.xml_parser.XmlParser;
 import java.io.File;
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
