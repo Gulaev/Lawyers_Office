@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<clients xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<client xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:noNamespaceSchemaLocation="xsd/client.xsd">
-  <client>
-    <clientId>1</clientId>
-    <firstName>Jane</firstName>
-    <lastName>Doe</lastName>
-    <passportId>1</passportId>
-  </client>
-  <client>
-    <clientId>1</clientId>
-    <firstName>Jone</firstName>
-    <lastName>Hall</lastName>
-    <passportId>2</passportId>
-  </client>
-</clients>
+  <clientId>1</clientId>
+  <firstName>Jone</firstName>
+  <lastName>Hall</lastName>
+  <passport>
+    <passportId>123</passportId>
+    <tin>123456789</tin>
+    <dateOfIssue>2023-01-15</dateOfIssue>
+    <issuedBy>Some Authority</issuedBy>
+  </passport>
+  <bankCards>
+    <bankCard >
+      <bankCardId>2</bankCardId>
+      <cardNumber>4537 4567 3234 2342</cardNumber>
+      <dateEnd>2023-12-30</dateEnd>
+      <cvv>233</cvv>
+      <nameOnCard>John Jones</nameOnCard>
+      <clientId>1</clientId>
+    </bankCard>
+    <bankCard >
+      <bankCardId>2</bankCardId>
+      <cardNumber>4537 4567 3234 2342</cardNumber>
+      <dateEnd>2023-12-30</dateEnd>
+      <cvv>233</cvv>
+      <nameOnCard>John Jones</nameOnCard>
+      <clientId>1</clientId>
+    </bankCard>
+  </bankCards>
+</client>

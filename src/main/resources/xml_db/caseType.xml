@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<caseTypes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="xsd/caseType.xsd">
-
   <caseType>
     <caseTypeId>1</caseTypeId>
     <caseTypeName>Example Case Type</caseTypeName>
@@ -10,11 +6,3 @@
     <feesStructure>Example fees structure</feesStructure>
     <averageCaseCost>1000</averageCaseCost>
   </caseType>
-  <caseType>
-    <caseTypeId>2</caseTypeId>
-    <caseTypeName>Example Case Type Number Two</caseTypeName>
-    <legalRequirements>Example legal requirements</legalRequirements>
-    <feesStructure>Example fees structure</feesStructure>
-    <averageCaseCost>2000</averageCaseCost>
-  </caseType>
-</caseTypes>

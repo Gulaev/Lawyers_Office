@@ -2,23 +2,25 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="bankCards">
+  <!--  <xs:element name="bankCards">-->
+  <!--    <xs:complexType>-->
+  <!--      <xs:sequence>-->
+  <!--        <xs:element name="bankCard" type="bankCard" maxOccurs="unbounded"/>-->
+  <!--      </xs:sequence>-->
+  <!--    </xs:complexType>-->
+  <!--  </xs:element>-->
+
+
+  <xs:element name="bankCard">
     <xs:complexType>
       <xs:sequence>
-        <xs:element name="bankCard" type="bankCardType" maxOccurs="unbounded"/>
+        <xs:element name="bankCardId" type="xs:int"/>
+        <xs:element name="cardNumber" type="xs:string"/>
+        <xs:element name="dateEnd" type="xs:date"/>
+        <xs:element name="cvv" type="xs:int"/>
+        <xs:element name="nameOnCard" type="xs:string"/>
+        <xs:element name="clientId" type="xs:int"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
-
-  <xs:complexType name="bankCardType">
-    <xs:sequence>
-      <xs:element name="bankCardId" type="xs:int"/>
-      <xs:element name="cardNumber" type="xs:string"/>
-      <xs:element name="dateEnd" type="xs:date"/>
-      <xs:element name="cvv" type="xs:int"/>
-      <xs:element name="nameOnCard" type="xs:string"/>
-      <xs:element name="clientId" type="xs:int"/>
-    </xs:sequence>
-  </xs:complexType>
 </xs:schema>

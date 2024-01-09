@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+
+        <File name="SummaryFile" fileName="logs/summary-file.log">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
+        </File>
+    </Appenders>
+    <Loggers>
+
+        <Logger name="com.gulaev" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+        </Logger>
+
+        <Logger name="com.gulaev" level="info" additivity="false">
+            <AppenderRef ref="SummaryFile"/>
+        </Logger>
+
+        <Root level="info" additivity="false">
+            <AppenderRef ref="Console" />
+        </Root>
+    </Loggers>
+</Configuration>
+
+
+

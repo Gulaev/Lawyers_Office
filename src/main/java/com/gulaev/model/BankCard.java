@@ -1,43 +1,36 @@
 package com.gulaev.model;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlRootElement;
+
+
 import java.util.Date;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import lombok.Data;
 
 @Data
 @XmlRootElement(name = "bankCard")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class BankCard {
 
-  private Integer bankCardId;
-  private String cardNumber;
-  private Date dateEnd;
-  private Integer cvv;
-  private String nameOnCard;
-  private Integer clientId;
-
   @XmlElement(name = "bankCardId")
-  public void setBankCardId(Integer bankCardId) {
-    this.bankCardId = bankCardId;
-  }
+  private Integer bankCardId;
 
-  public void setCardNumber(String cardNumber) {
-    this.cardNumber = cardNumber;
-  }
+  @XmlElement(name = "cardNumber")
+  private String cardNumber;
 
-  public void setDateEnd(Date dateEnd) {
-    this.dateEnd = dateEnd;
-  }
+  @XmlElement(name = "dateEnd")
+  private Date dateEnd;
 
-  public void setCvv(Integer cvv) {
-    this.cvv = cvv;
-  }
+  @XmlElement(name = "cvv")
+  private Integer cvv;
 
-  public void setNameOnCard(String nameOnCard) {
-    this.nameOnCard = nameOnCard;
-  }
+  @XmlElement(name = "nameOnCard")
+  private String nameOnCard;
 
-  public void setClientId(Integer clientId) {
-    this.clientId = clientId;
-  }
+  @XmlElement(name = "clientId")
+  private Integer clientId;
 }
+
+

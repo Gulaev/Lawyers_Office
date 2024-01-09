@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<lawyers xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="xsd/lawyer.xsd">
-  <lawyer>
+ <lawyer>
     <lawyerId>1</lawyerId>
     <firstName>John</firstName>
     <lastName>Fran</lastName>
     <officeRoomNumber>101</officeRoomNumber>
-    <passportId>1</passportId>
+    <passport>
+      <passportId>123</passportId>
+      <tin>123456789</tin>
+      <dateOfIssue>2023-01-15</dateOfIssue>
+      <issuedBy>Some Authority</issuedBy>
+    </passport>
   </lawyer>
-  <lawyer>
-    <lawyerId>1</lawyerId>
-    <firstName>John</firstName>
-    <lastName>Chan</lastName>
-    <officeRoomNumber>100</officeRoomNumber>
-    <passportId>2</passportId>
-  </lawyer>
-</lawyers>
+

@@ -2,22 +2,26 @@
 
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
 
-  <xs:element name="lawyers">
+
+  <xs:element name="lawyer">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element name="lawyer" type="lawyerType" maxOccurs="unbounded"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-
-  <xs:complexType name="lawyerType">
     <xs:sequence>
       <xs:element name="lawyerId" type="xs:int"/>
       <xs:element name="firstName" type="xs:string"/>
       <xs:element name="lastName" type="xs:string"/>
       <xs:element name="officeRoomNumber" type="xs:int"/>
+      <xs:element name="passport" type="passport"/>
+    </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+
+  <xs:complexType name="passport">
+    <xs:sequence>
       <xs:element name="passportId" type="xs:int"/>
+      <xs:element name="tin" type="xs:string"/>
+      <xs:element name="dateOfIssue" type="xs:date"/>
+      <xs:element name="issuedBy" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

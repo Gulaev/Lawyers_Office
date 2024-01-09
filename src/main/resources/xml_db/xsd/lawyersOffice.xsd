@@ -2,19 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
   elementFormDefault="qualified">
 
-  <xs:element name="lawyersOffices">
+
+  <xs:element name="lawyersOffice">
     <xs:complexType>
-      <xs:sequence>
-        <xs:element name="lawyersOffice" type="lawyersOffice" maxOccurs="unbounded"/>
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-
-
-    <xs:complexType name="lawyersOffice">
       <xs:sequence>
         <xs:element name="officeId" type="xs:int"/>
         <xs:element name="streetAddress" type="xs:string"/>
       </xs:sequence>
     </xs:complexType>
+  </xs:element>
 </xs:schema>
