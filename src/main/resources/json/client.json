@@ -1,0 +1,29 @@
+{
+  "clientId": "1",
+  "firstName": "Joe",
+  "lastName": "Doe",
+  "passport": {
+    "passportId": "1",
+    "tin": "123456789",
+    "dateOfIssue": "2023-01-15",
+    "issuedBy": "Some Authority"
+  },
+  "bankCards": [
+    {
+      "bankCardId": 1234,
+      "cardNumber": "1234 5678 9012 3456",
+      "dateEnd": "2025-12-31",
+      "cvv": 123,
+      "nameOnCard": "John Doe",
+      "clientId": 789
+    },
+    {
+      "bankCardId": 124,
+      "cardNumber": "1234 5678 9012 3456",
+      "dateEnd": "2025-12-31",
+      "cvv": 123,
+      "nameOnCard": "John Doe",
+      "clientId": 789
+    }
+  ]
+}

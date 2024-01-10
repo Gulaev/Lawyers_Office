@@ -1,4 +1,4 @@
-package com.gulaev.xml_parser;
+package com.gulaev.xml;
 
 import com.gulaev.model.BankCard;
 import com.gulaev.model.CaseType;

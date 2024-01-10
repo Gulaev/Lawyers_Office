@@ -1,0 +1,12 @@
+{
+  "lawyerId": 1,
+  "firstName": "John",
+  "lastName": "lastName",
+  "officeRoomNumber": 101,
+  "passport": {
+    "passportId": "1",
+    "tin": "123456789",
+    "dateOfIssue": "2023-01-15",
+    "issuedBy": "Some Authority"
+  }
+}

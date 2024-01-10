@@ -1,0 +1,7 @@
+{
+  "caseTypeId": 1,
+  "caseTypeName": "Example Case Type",
+  "legalRequirements": "Example legal requirements",
+  "feesStructure": "Example fees structure",
+  "averageCaseCost": 10000
+}

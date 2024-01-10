@@ -1,0 +1,8 @@
+{
+  "bankCardId": 1234,
+  "cardNumber": "1234 5678 9012 3456",
+  "dateEnd": "2025-12-31",
+  "cvv": 123,
+  "nameOnCard": "John Doe",
+  "clientId": 789
+}
