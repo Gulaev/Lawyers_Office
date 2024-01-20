@@ -54,8 +54,56 @@ public class Client {
     this.bankCards = bankCards;
   }
 
+
   @XmlTransient
   public void setContracts(List<Contract> contracts) {
     this.contracts = contracts;
+  }
+
+  public static Builder builder(){
+    return new Builder(new Client());
+  }
+
+  private static class Builder {
+
+    private final Client client;
+
+    public Builder(Client client) {
+      this.client = client;
+    }
+
+    public Builder clientId(Integer clientId){
+      client.clientId = clientId;
+      return this;
+    }
+
+    public Builder firstName(String firstName) {
+      client.firstName = firstName;
+      return this;
+    }
+
+    public Builder lastName(String lastNane) {
+      client.lastName = lastNane;
+      return this;
+    }
+
+    public Builder passport(Passport passport) {
+      client.passport = passport;
+      return this;
+    }
+
+    public Builder bankCards(List<BankCard> bankCards) {
+      client.bankCards = bankCards;
+      return this;
+    }
+
+    public Builder contracts(List<Contract> contracts) {
+      client.contracts = contracts;
+      return this;
+    }
+
+    public Client build() {
+      return this.client;
+    }
   }
 }

@@ -35,5 +35,9 @@ public class BankCardService implements Service<BankCard> {
     bankCardRepositoryImp.update(id, bankCard);
   }
 
+  public void delete(BankCard bankCard) {
+    bankCardRepositoryImp.deleteById(bankCard.getBankCardId());
+  }
+
 
 }

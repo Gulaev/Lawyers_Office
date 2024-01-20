@@ -29,5 +29,9 @@ public class PassportService implements Service<Passport> {
     passportRepository.update(id, passport);
   }
 
+  public void delete(Passport passport) {
+    passportRepository.deleteById(passport.getPassportId());
+  }
+
 
 }

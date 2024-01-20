@@ -61,4 +61,44 @@ public class Lawyer {
   public void setContracts(List<Contract> contracts) {
     this.contracts = contracts;
   }
+
+
+  private static class Builder {
+
+    private final Lawyer lawyer;
+
+    public Builder(Lawyer lawyer) {
+      this.lawyer = lawyer;
+    }
+
+    public Builder clientId(Integer lawyerId){
+      lawyer.lawyerId = lawyerId;
+      return this;
+    }
+
+    public Builder firstName(String firstName) {
+      lawyer.firstName = firstName;
+      return this;
+    }
+
+    public Builder lastName(String lastNane) {
+      lawyer.lastName = lastNane;
+      return this;
+    }
+
+    public Builder passport(Passport passport) {
+      lawyer.passport = passport;
+      return this;
+    }
+
+
+    public Builder contracts(List<Contract> contracts) {
+      lawyer.contracts = contracts;
+      return this;
+    }
+
+    public Lawyer build() {
+      return this.lawyer;
+    }
+  }
 }

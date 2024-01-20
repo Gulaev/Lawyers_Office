@@ -1,5 +1,7 @@
 package com.gulaev.model;
 
+import com.gulaev.observer.ObserverHolder;
+import java.util.List;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
@@ -12,6 +14,7 @@ public class LawyersOffice {
 
   private Integer officeId;
   private String streetAddress;
+  private List<Client> clientsBase;
 
   @XmlElement(name = "officeId")
   public Integer getOfficeId() {
@@ -29,6 +32,16 @@ public class LawyersOffice {
 
   public void setStreetAddress(String streetAddress) {
     this.streetAddress = streetAddress;
+  }
+
+  public void addClient(Client client) {
+    ObserverHolder.onNewClient(client);
+    clientsBase.add(client);
+  }
+
+  public void deleteClient(Client client) {
+    ObserverHolder.onDeleteClient(client);
+    clientsBase.remove(client);
   }
 }
 
